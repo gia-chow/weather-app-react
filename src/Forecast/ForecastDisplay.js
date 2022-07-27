@@ -1,4 +1,5 @@
 import SingleDayForecastCard from './SingleDayForecastCard';
+import Col from 'react-bootstrap/Col';
 
 function ForecastDisplay(props) {
     if (!props.weatherData.location?.name) {
@@ -10,6 +11,8 @@ function ForecastDisplay(props) {
             const averageTemp = forecast.day.avgtemp_f;
             const maxTemp = forecast.day.maxtemp_f;
             const minTemp = forecast.day.mintemp_f;
+            const iconUrl = forecast.day.condition.icon;
+            const condition = forecast.day.condition.text;
 
             return (
             <SingleDayForecastCard 
@@ -18,13 +21,17 @@ function ForecastDisplay(props) {
                 averageTemp={averageTemp}
                 maxTemp={maxTemp}
                 minTemp={minTemp}
+                iconUrl={iconUrl}
+                condition={condition}
             ></SingleDayForecastCard>
             )
         })
 
         return (
             <div>
-                {allForecastCards}
+                <Col className="d-flex">
+                    {allForecastCards}
+                </Col>
             </div>
             )
     }

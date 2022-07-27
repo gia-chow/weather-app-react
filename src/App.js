@@ -2,6 +2,7 @@ import "./App.css";
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { Routes, Route, Link } from "react-router-dom";
 import Forecast from './Forecast/Forecast';
+import HomeForecast from './Forecast/HomeForecast';
 import Navbar from 'react-bootstrap/Navbar';
 import Nav from 'react-bootstrap/Nav';
 import Container from 'react-bootstrap/Container';
@@ -24,8 +25,8 @@ function App() {
       </Navbar>
       <header className="App-header">
         <Routes>
-            <Route path="Forecast" element={<Forecast></Forecast>}
-            ></Route>
+            <Route path="/" element={<HomeForecast></HomeForecast>}></Route>
+            <Route path="Forecast" element={<Forecast></Forecast>}></Route>
         </Routes>
       </header>
     </div>
