@@ -1,6 +1,6 @@
+import { useState, useEffect } from "react";
 import Card from 'react-bootstrap/Card';
 import Row from 'react-bootstrap/Row';
-import { useState, useEffect } from "react";
 
 function HomeForecast() {
     const url = "https://api.weatherapi.com/v1/current.json?key=bcdefa17d9b7477db50225739221805&q=73106";
@@ -26,8 +26,8 @@ function HomeForecast() {
                 <Row>
                     <Card style={{ width: '18rem' }}>
                         <Card.Body>
-                            <Card.Title>Current Weather for {weatherData.location.name}</Card.Title>
-                            <Card.Subtitle className="mb-2 text-muted">Date: {weatherData.current.last_updated}</Card.Subtitle>
+                            <Card.Title>{weatherData.location.name}</Card.Title>
+                            <Card.Subtitle className="mb-2 text-muted">Local Time: {weatherData.location.localtime}</Card.Subtitle>
                             <Card.Text>
                                 <ul>
                                     <li><img src={weatherData.current.condition.icon}></img></li>

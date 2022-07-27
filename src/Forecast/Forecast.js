@@ -7,7 +7,7 @@ import { useState } from "react";
 function Forecast() {
     const apiKey = "bcdefa17d9b7477db50225739221805";
     const [days, setDays] = useState(5);
-    const [query, setQuery] = useState("73106");
+    const [query, setQuery] = useState("");
     const [weatherData, setWeatherData] = useState({});
     const [loading, setLoading] = useState(false)
     const url = `https://api.weatherapi.com/v1/forecast.json?key=${apiKey}&q=${query}&days=${days}&aqi=no&alerts=no`;
@@ -26,7 +26,7 @@ function Forecast() {
                 <Form onSubmit={onSubmit}>
                 <Form.Group className="mb-3">
                     <Form.Label>Location Query:</Form.Label>
-                    <Form.Control type="text" placeholder="Enter location to lookup weather for" 
+                    <Form.Control type="text" placeholder="Enter location" 
                             value={query}
                             onChange={(e) => setQuery(e.target.value)}
                     />
